@@ -1,0 +1,68 @@
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage[strict]{changepage}
+\usepackage{tikz}
+
+
+
+
+\renewcommand{\headrulewidth}{0pt}% 2pt header rule
+\renewcommand{\headrule}{\hbox to\headwidth{%
+  \color{black}\leaders\hrule height \headrulewidth\hfill}}
+
+\newcommand{\SkattedirektionenHead}[2]{
+
+\addtolength{\headwidth}{5cm}
+\fancyheadoffset{5 cm}
+\setlength{\headheight}{1 cm} 
+
+
+\pagenumbering{gobble}
+
+\fancyhead[C]
+{
+	\LARGE
+	\hfill
+	\begin{tabular}{  p{8cm} p{2.5cm}}
+		#1 & #2
+	\end{tabular}
+	
+	\vspace*{-0.35cm}
+	\noindent\rule{\paperwidth}{1.5pt}
+}
+
+\fancyhead[L]
+{
+	%\leftmark
+	%\hspace*{-5cm}
+	%\vspace*{-4cm}
+	%\advance\leftskip-5cm
+	\begin{tikzpicture}[overlay, remember picture]
+		\node[xshift=5cm,yshift=-4.69cm] at (current page.north west) {\includegraphics[width=10cm,height=8cm]{bilder/Pyriska_skattedirektionen.png}};
+	\end{tikzpicture}
+
+	%\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
+	
+
+}
+
+
+\fancyfoot[C]
+{
+	tjänstevarelse:\\
+	\vspace*{1cm}
+}
+\fancyfoot[L]{
+	Arkiv ID:\\
+	\vspace*{1cm}
+}
+\fancyfoot[R]{
+	datum \hspace*{1cm} ort:\\
+	\vspace*{1cm}
+	
+
+}
+
+\pagestyle{fancy}
+}
